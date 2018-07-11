@@ -47,7 +47,7 @@ function draw() {
       rotate = true;
       isStretched = true;
     }
-    x = map(mouseX, 0, width, -width / 4, isStretched === false ? ANUS_ENTRANCE : 0);
+    x = constrain(map(mouseX, 100, width - 100, -width / 4, isStretched === false ? ANUS_ENTRANCE : 0), -width / 4, isStretched === false ? ANUS_ENTRANCE : 0);
     // radius = 13 + abs(sin(incSin) * 2);
     analRadius = CIRC - (1.5 * analHit);
     draw3DStuff();
