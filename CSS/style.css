@@ -11,7 +11,7 @@ body {
     left: 0px;
 }
 
-#intro, #demo {
+#intro, #demo, #demo2 {
     /* display: none; */
     color: #0f0;
     position: fixed;
@@ -30,13 +30,17 @@ body {
     z-index: 9999;
 }
 
-#demo {
+#demo, #demo2 {
     display: none;
-    font-size: 3vh;
+    font-size: 3vh;    
+    text-decoration: none;
+}
+#demo{
     color: yellow;
     top: 25%;
-    text-decoration: none;
-    transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
+}
+#demo2{
+    color: #f00;
+    top: 75%;
+
 }

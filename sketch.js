@@ -43,13 +43,17 @@ function draw() {
     } else if (x < -110) {
       hit = true;
     }
-    if (analHit > 5) isStretched = true;
+    if (analHit > 5) {
+      rotate = true;
+      isStretched = true;
+    }
     x = map(mouseX, 0, width, -width / 4, isStretched === false ? ANUS_ENTRANCE : 0);
     // radius = 13 + abs(sin(incSin) * 2);
     analRadius = CIRC - (1.5 * analHit);
     draw3DStuff();
-    if(rotate)incSin += inc;
+    if (rotate) incSin += inc;
   } else {
+    // intro animation
     let w = map(startCount, 0, START_VALUE, 0, width);
     fill(0, 0, 255);
     rect(-width / 2, -height / 2, w, height);
@@ -67,6 +71,7 @@ function draw() {
     if (!start && startCount > START_VALUE) {
       document.getElementById('intro').style.display = 'none';
       document.getElementById('demo').style.display = 'block';
+      document.getElementById('demo2').style.display = 'block';
       start = true;
     }
   }
@@ -74,6 +79,7 @@ function draw() {
 function mouseMoved() {
   // console.log(x);
 }
+
 function draw3DStuff() {
   rotateX(PI * 0.45);
   rotateZ(PI / 5);
@@ -87,6 +93,7 @@ function draw3DStuff() {
   model(toothBrush);
   pop();
 }
+
 function windowResized() {
   resizeCanvas(innerWidth, innerHeight, WEBGL);
 }
